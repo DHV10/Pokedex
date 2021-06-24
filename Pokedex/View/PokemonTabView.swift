@@ -20,7 +20,7 @@ struct PokemonTabView: View {
                     }
                 }
                 .tag(Constants.favouriteTab)
-            PokemonTypeView()
+            PokemonTypeView(selectedTad: $selectedTab)
                 .tabItem {
                     VStack {
                         Image(systemName: "square.grid.2x2")

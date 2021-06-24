@@ -14,4 +14,6 @@ class Constants {
     static var listTab = 2
     
     static var baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
+    
+    static var defaultList = "All Types"
 }

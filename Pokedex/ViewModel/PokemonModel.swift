@@ -11,12 +11,14 @@ import SwiftUI
 class PokemonModel: ObservableObject {
     
     @Published var pokemons = [Pokemon]()
- 
+    @Published var types = Set<String>()
+    @Published var selectetedType: String?
     
     let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     
     init() {
         fetchPokemon()
+       
     }
     
     func fetchPokemon() {
@@ -28,6 +30,10 @@ class PokemonModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self.pokemons = pokemons
+                self.types = Set(self.pokemons.map({ p in
+                    return p.type
+                }))
+                self.types.update(with: Constants.defaultList)
             }
         }.resume()
     }
