@@ -10,11 +10,9 @@ import Kingfisher
 
 struct PokemonCell: View {
    
-    @EnvironmentObject var  model: PokemonModel
+    @EnvironmentObject var model: PokemonModel
     var pokemon: Pokemon
     //let backGround: Color = Color(model.backGroundColor(fortype: pokemon.type)
-    
-
 
     var body: some View {
         ZStack {

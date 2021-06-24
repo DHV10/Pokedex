@@ -9,18 +9,22 @@ import Foundation
 
 struct Pokemon: Decodable, Identifiable {
     
-    let id: Int
-    let name: String
-    let imageUrl: String
-    let type: String
+    var id: Int
+    var name: String
+    var imageUrl: String
+    var type: String
+    
+    var attack: Int
+    var defense: Int
+    var description: String
+    var evolutionChain:[Evolution]?
+    var height: Int
+    var weight: Int
+    
 }
 
-let MOCK_POKEMON: [Pokemon] = [
-    
-    .init(id: 0, name: "boulasour", imageUrl: "apple" , type:"positon"),
-    .init(id: 0, name: "boulasour", imageUrl: "apple" , type:"positon"),
-    .init(id: 0, name: "boulasour", imageUrl: "apple" , type:"positon")
-    
-    
-]
+struct Evolution : Decodable , Identifiable {
+    var id: String
+    var name: String
+}
 

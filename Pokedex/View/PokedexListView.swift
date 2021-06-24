@@ -8,9 +8,9 @@
 import SwiftUI
 
 
-struct PokedexView: View {
+struct PokedexListView: View {
     
-    @EnvironmentObject var model : PokemonModel
+    @EnvironmentObject var model: PokemonModel
     
     private let gridsItems = [GridItem(.flexible()), GridItem(.flexible())]
     
