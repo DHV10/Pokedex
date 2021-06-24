@@ -11,6 +11,7 @@ import SwiftUI
 class PokemonModel: ObservableObject {
     
     @Published var pokemons = [Pokemon]()
+ 
     
     let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     

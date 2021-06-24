@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct PokedexListView: View {
+struct PokemonListView: View {
     
     @EnvironmentObject var model: PokemonModel
     
@@ -19,7 +19,10 @@ struct PokedexListView: View {
             ScrollView {
                 LazyVGrid(columns: gridsItems, spacing: 16){
                     ForEach(model.pokemons){ pokemon in
-                        PokemonCell(pokemon: pokemon)
+                        NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
+                            PokemonCell(pokemon: pokemon)
+                        }
+                      
                     }
                 }
             }
